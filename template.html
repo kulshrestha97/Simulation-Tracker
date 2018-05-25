@@ -1,0 +1,165 @@
+<html>
+    <head>
+        
+        <script>
+            {% for row in display %}
+            function {{ row['design_name'] + row['time'] }}() {
+                var tableID = "{{ row['design_name'] + row['time'] }}"
+            var lTable = document.getElementById(tableID);
+            lTable.style.display = (lTable.style.display == "block") ? "none" : "block";
+            }
+            {% endfor %}
+        
+        </script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+            h1{
+                font-family: 'Titillium Light', sans-serif;
+                text-align: center;
+            }
+            p{
+                font-family: 'Titillium Light', sans-serif;
+                text-align: center;
+            }
+            table {
+                font-family: 'Titillium Light', sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                box-shadow: 4px 4px 4px  #888;
+                }
+
+            th, td {
+                font-family: 'Titillium Light', sans-serif;
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                }
+            a{
+                font-family: 'Titillium Light', sans-serif;
+            }
+            footer{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                font-family: 'Titillium Light', sans-serif;
+                }
+            body{
+                height: 100%;
+            }   
+        </style>
+        <title> Simulation Tracker by Rajat Kulshreshtha </title>
+    </head>
+    <body >
+        <h1>Simulation Tracker</h1>
+        
+        <p>
+            Simulation Tracker is a tool, that helps the top tier management to view the ongoing progress of the code. 
+        </p>
+        
+        <br>
+        <br>
+        <table id="tbl" >
+            
+            <tr>
+                <th>Design Name</th>
+                <th>Line Coverage</th>
+                <th>Branches</th>
+                <th>FSM</th>
+                <th>Total Percentage</th>
+                <th>Toggle</th>
+                <th>Error</th>
+                <th>Fatal</th>
+                <th>warning</th>
+                <th>Pass</th>
+                <th>Time Stamp</th>
+            </tr>
+            
+            {% for row in display %}
+            <tr>
+                <td>
+                       <a href="#{{ row['design_name'] + row['time'] }}" onclick="{{ row['design_name'] + row['time'] }}();">
+                           {{ row['design_name'] }}
+                        </a> 
+                </td>
+                <td>
+                    {{ row['line'] }}
+                </td>
+                <td>
+                    {{ row['branches'] }}
+                </td>
+                <td>
+                    {{ row['fsm'] }}
+                </td>
+                <td>
+                    {{ row['totalpercentage'] }}
+                </td>
+                <td>
+                        {{ row['toggle'] }}
+                </td>
+                <td>
+                    {{ row['error'] }}
+                </td>
+                <td>
+                    {{ row['fatal'] }}
+                </td>
+                <td>
+                    {{ row['warning'] }}
+                </td>
+                <td>
+                    {{ row['pass'] }}
+                </td>
+                <td>
+                    {{ row['time'] }}
+                </td>
+                
+              
+            </tr>
+            {% endfor %}
+             
+        </table>
+       
+        
+        {% for name,table in tables.items() %}
+       
+        <section id={{ name }} style="display: none">
+            <table>
+                        <tr>
+                            <th>Test Case</th>
+                            <th>Result</th>
+                            <th>Error</th>
+                            <th>Reason</th>
+                        </tr>
+                        
+                        
+                        {% for value in table %}
+                        <tr>
+                            <td>
+                                {{ value['testcase'] }}
+                            </td>
+                            <td>
+                                {{ value['result'] }}
+                            </td>
+                            
+                            <td>
+                                {{ value['error'] }}    
+                            </td>
+                            <td>
+                                {{ value['reason'] }}
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+                        
+                    </table>
+                </section>
+                    {% endfor %}
+                        
+        
+        <footer>
+            By Rajat Kulshreshtha
+        </footer>
+    </body>
+</html>
