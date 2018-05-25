@@ -52,9 +52,9 @@ the said direction.
 
 The workflow of the project is defined as follows:
 
-```
-Figure 1 Workflow of Simulation Tracker.
-```
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure1.png)
+_Figure 1 Workflow of Simulation Tracker._
+
 
 ## 4. Development Environment and Frameworks
 
@@ -106,24 +106,25 @@ Our project was modularized into three major parts:
 3. **Reportparser:** Reportparser module is responsible for parsing various reports
     and returning the results for the same.
 
-
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure2.png)
 _Figure 2 Module wise description of project_
 
 ## 6. Working Snapshots
 
-
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure3.png)
 _Figure 3 Introductory Page, it provides the option of different working channels._
 
 
-
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure4.png)
 _Figure 4 Tracker initially asks for directory, then it asks for the DO file.
 If there isn't a DO file, it has the capability to make a DO file and execute the same._
 
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure5.png)
 _Figure 5 Tracker than asks for the text file name, after that it asks for the folder in which html report is stored. The tracker than
 stores the parsed the values in database._
 
 
-
+![alt text](https://github.com/kulshrestha97/Simulation-Tracker/tree/master/ProjectPhotos/Figure6.png)
 _Figure 6 the generated report comprises of the progress of various DUTs ordered by the recent actions._
 
 ## 7. Conclusion
