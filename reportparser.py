@@ -52,7 +52,7 @@ class textreport:
             listoflist.append(i)
         
         listoflist = listoflist[14:]
-        # TODO: Discuss with Ashu bhai regarding the same.
+        
         for i in listoflist:
             if(i[1]=="Stmts"):
                 statement = i[5]

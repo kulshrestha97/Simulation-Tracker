@@ -33,14 +33,14 @@ class commands:
         self.direc = dir
         
     
-    def vlib(self): # Very less chance of staying till final code.
+    def vlib(self): 
         """
         vlib can create a folder in the system file hierarchy for execution of commands.
         """
         d = self.direc
         subprocess.check_output("vlib "+d, shell = True)
        
-    def vmap(self,name): # Very less chance of staying till final code.
+    def vmap(self,name): 
         """
         vmap can assign a name to the library of QuestaSim
         """
